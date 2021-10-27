@@ -1,0 +1,11 @@
+{
+  "name": "main-course-project",
+  "version": "1.0.0",
+  "scripts": {
+    "start-client": "npm run serve --prefix client",
+    "start-server": "npm run serve --prefix server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
