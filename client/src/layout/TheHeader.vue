@@ -3,12 +3,15 @@
     <div class="header__container">
       <div class="header__logo">Coach Finder</div>
       <nav class="header__nav">
-        <router-link :to="coachesLink" class="header__link"
-          >Coaches</router-link
-        >
-        <router-link :to="requestsLink" class="header__link"
-          >Requests</router-link
-        >
+        <router-link :to="coachesLink" class="header__link">
+          Coaches
+        </router-link>
+        <router-link :to="requestsLink" class="header__link">
+          Requests
+        </router-link>
+        <router-link :to="registrationLink" class="header__link">
+          Register
+        </router-link>
       </nav>
     </div>
   </header>
@@ -20,6 +23,7 @@ export default {
     return {
       coachesLink: { name: "coach-list" },
       requestsLink: { name: "request-list" },
+      registrationLink: { name: "coach-registration" },
     };
   },
 };

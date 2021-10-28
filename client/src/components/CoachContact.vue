@@ -35,9 +35,14 @@
         :is-textarea="true"
         v-model="message"
       ></base-textbox>
-      <base-button class="form__button">
-        Send
-      </base-button>
+      <div class="form__buttons">
+        <base-button>
+          Send
+        </base-button>
+        <base-button button-style="outline" @click="cancelContact">
+          Cancel
+        </base-button>
+      </div>
     </form>
   </base-card>
 </template>
@@ -59,6 +64,13 @@ export default {
     };
   },
   methods: {
+    cancelContact($event) {
+      $event.preventDefault();
+      this.$router.push({
+        name: "coach-details",
+        params: { coachId: this.coachId },
+      });
+    },
     preventSubmission($event) {
       $event.preventDefault();
     },
@@ -108,8 +120,10 @@ export default {
       grid-column: span 2;
     }
   }
-  &__button {
-    justify-self: start;
+  &__buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.5rem;
   }
 }
 </style>
